@@ -22,14 +22,13 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            scroll-behavior: smooth; /* Enables smooth snapping when shortcuts are clicked */
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-main);
             color: var(--text-dark);
             line-height: 1.5;
-            padding-top: 60px; /* Prevents sticky nav from overlapping hero text */
         }
 
         .container {
@@ -38,38 +37,34 @@
             padding: 0 20px;
         }
 
-        /* --- STICKY SHORTCUT NAVIGATION BAR --- */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* --- STATIC NAVIGATION SHORTCUT BAR --- */
+        .section-nav-bar {
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
+            background: var(--bg-main);
             border-bottom: 1px solid var(--text-title-bg);
-            z-index: 1000;
             padding: 15px 0;
             text-align: center;
+            margin-bottom: 30px;
         }
 
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 24px;
             list-style: none;
             flex-wrap: wrap;
         }
 
         @media (max-width: 480px) {
             .nav-links {
-                gap: 12px;
+                gap: 14px;
             }
         }
 
         .nav-links a {
             color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
             transition: color 0.2s;
         }
@@ -78,7 +73,6 @@
             color: var(--purple-accent);
         }
 
-        /* --- SECTION NUMBER HEADINGS --- */
         .section-num {
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -111,14 +105,14 @@
         .huge-title span.purple { color: var(--purple-accent); }
 
         #hero {
-            padding: 40px 0 60px 0;
+            padding: 60px 0;
             min-height: 55vh;
             display: flex;
             align-items: center;
         }
 
         @media (min-width: 768px) {
-            #hero { padding: 80px 0; }
+            #hero { padding: 100px 0; }
         }
 
         .hero-subtitle {
@@ -163,13 +157,13 @@
         .btn-outline { border: 1px solid var(--text-title-bg); color: var(--text-muted); background: transparent; }
         .btn-outline:hover { border-color: var(--text-dark); color: var(--text-dark); }
 
-        /* Offset scroll padding so headings don't hide behind navigation bar when snapping */
+        /* Snapping offset anchors */
         #about, #skills, #projects, #recognition, #contact {
-            scroll-margin-top: 80px;
+            scroll-margin-top: 40px;
         }
 
         #about {
-            padding: 60px 0;
+            padding: 40px 0 60px 0;
             background: var(--bg-sec);
             border-top: 1px solid #f1f5f9;
             border-bottom: 1px solid #f1f5f9;
@@ -237,7 +231,7 @@
         .card-body h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
         .card-body p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.4; flex-grow: 1; }
         .card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-        .card-tags span { font-size: 0.7rem; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+        .card-tags span { font-size: 0.7()rem; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
         
         .hidden-projects, .hidden-awards { display: none; }
         .toggle-container { text-align: center; margin-top: 30px; }
@@ -269,19 +263,6 @@
 </head>
 <body>
 
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Portfolio</a></li>
-                <li><a href="#recognition">Honors</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <section id="hero">
         <div class="container">
             <div class="section-num">01 / Welcome</div>
@@ -300,6 +281,19 @@
     </section>
 
     <section id="about">
+        <div class="section-nav-bar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#recognition">Honors</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
         <div class="container">
             <div class="section-num">02 / Profile</div>
             <h2 class="huge-title"><span class="gray">Engineer by craft,</span> <span class="purple">creator by nature.</span></h2>
@@ -310,23 +304,23 @@
                 </div>
                 <div>
                     <p class="about-text">
-                        I'm Sazzad Hossen — an EEE graduate with a 3.92 CGPA from United International University[cite: 10, 22]. I specialize in VLSI, structural hardware optimization, and front-end communication layout nodes, translating complex technical problems into clean, high-performance physical circuitry configurations[cite: 40, 46, 47].
+                        I'm Sazzad Hossen — an EEE graduate with a 3.92 CGPA from United International University[cite: 10, 22]. I specialize in VLSI, structural hardware optimization, and front-end communication layout nodes, translating complex technical problems into clean, high-performance physical circuitry configurations.
                     </p>
                     <p class="about-text" style="font-size: 0.95rem; color: var(--text-muted);">
-                        Currently serving as a university Teaching Assistant, coordinating class lectures, managing laboratory hardware configurations, and assisting departmental accreditation pipelines[cite: 16, 17, 18, 19].
+                        Currently serving as a university Teaching Assistant, coordinating class lectures, managing laboratory hardware configurations [cite: 16, 17, 18], and assisting departmental accreditation pipelines[cite: 19].
                     </p>
                     <div class="stats-row">
                         <div class="stat-box">
                             <h4>3.92</h4>
-                            <p>B.Sc. CGPA [cite: 22]</p>
+                            <p>B.Sc. CGPA</p>
                         </div>
                         <div class="stat-box">
                             <h4>11+</h4>
-                            <p>Core Projects [cite: 40, 42, 51, 52]</p>
+                            <p>Core Projects</p>
                         </div>
                         <div class="stat-box">
                             <h4>5x</h4>
-                            <p>Competition Awards [cite: 60, 61, 62]</p>
+                            <p>Competition Awards</p>
                         </div>
                     </div>
                 </div>
@@ -343,20 +337,20 @@
                 <div class="skills-column">
                     <h3>EDA Tools & Modeling</h3>
                     <div class="tech-blocks">
-                        <div class="tech-card"><i class="fa-solid fa-microchip"></i><span class="short">Cadence</span><span class="full">Virtuoso [cite: 55]</span></div>
-                        <div class="tech-card"><i class="fa-solid fa-wave-square"></i><span class="short">Spectre</span><span class="full">Simulation [cite: 40]</span></div>
-                        <div class="tech-card"><i class="fa-solid fa-network-wired"></i><span class="short">ETAP</span><span class="full">Power Analysis [cite: 55]</span></div>
-                        <div class="tech-card"><i class="fa-solid fa-laptop-code"></i><span class="short">NCSim</span><span class="full">Digital Verification [cite: 55]</span></div>
+                        <div class="tech-card"><i class="fa-solid fa-microchip"></i><span class="short">Cadence</span><span class="full">Virtuoso</span></div>
+                        <div class="tech-card"><i class="fa-solid fa-wave-square"></i><span class="short">Spectre</span><span class="full">Simulation</span></div>
+                        <div class="tech-card"><i class="fa-solid fa-network-wired"></i><span class="short">ETAP</span><span class="full">Power Analysis</span></div>
+                        <div class="tech-card"><i class="fa-solid fa-laptop-code"></i><span class="short">NCSim</span><span class="full">Digital Verification</span></div>
                     </div>
                 </div>
 
                 <div class="skills-column">
                     <h3>Simulation & Hardware</h3>
                     <div class="tech-blocks">
-                        <div class="tech-card"><i class="fa-solid fa-compass-drafting"></i><span class="short">AutoCAD</span><span class="full">Wiring & Layout [cite: 56]</span></div>
-                        <div class="tech-card"><i class="fa-solid fa-code"></i><span class="short">Verilog</span><span class="full">RTL Coding [cite: 54]</span></div>
-                        <div class="tech-card"><i class="fa-solid fa-chart-line"></i><span class="short">MATLAB</span><span class="full">Signal Processing [cite: 54]</span></div>
-                        <div class="tech-card"><i class="fa-solid fa-hardware"></i><span class="short">STM32</span><span class="full">Embedded Systems [cite: 57]</span></div>
+                        <div class="tech-card"><i class="fa-solid fa-compass-drafting"></i><span class="short">AutoCAD</span><span class="full">Wiring & Layout</span></div>
+                        <div class="tech-card"><i class="fa-solid fa-code"></i><span class="short">Verilog</span><span class="full">RTL Coding</span></div>
+                        <div class="tech-card"><i class="fa-solid fa-chart-line"></i><span class="short">MATLAB</span><span class="full">Signal Processing</span></div>
+                        <div class="tech-card"><i class="fa-solid fa-hardware"></i><span class="short">STM32</span><span class="full">Embedded Systems</span></div>
                     </div>
                 </div>
             </div>
@@ -370,103 +364,103 @@
             
             <div class="project-display-grid">
                 <div class="display-card">
-                    <div class="card-banner">Capstone Highlight [cite: 37]</div>
+                    <div class="card-banner">Capstone Highlight</div>
                     <div class="card-body">
-                        <h3>2.45 GHz CMOS RF Receiver Front-End [cite: 40]</h3>
+                        <h3>2.45 GHz CMOS RF Receiver Front-End</h3>
                         <p>Designed and simulated a complete receiver front-end chain by seamlessly integrating BPF, LNA, Mixer, and LPF blocks to optimize signal processing and minimize system noise floor parameters[cite: 40]. Realized an overall conversion gain of 50 dB with an intermediate frequency of 10-20 MHz[cite: 41].</p>
-                        <div class="card-tags"><span>Cadence Virtuoso</span><span>45nm CMOS</span><span>RF Layout</span><span>Spectre [cite: 40, 55]</span></div>
+                        <div class="card-tags"><span>Cadence Virtuoso</span><span>45nm CMOS</span><span>RF Layout</span><span>Spectre</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">VLSI Engineering [cite: 46]</div>
+                    <div class="card-banner">VLSI Engineering</div>
                     <div class="card-body">
-                        <h3>8-bit Carry Save Adder Schematic & Layout [cite: 46]</h3>
+                        <h3>8-bit Carry Save Adder Schematic & Layout</h3>
                         <p>Completed full schematic simulation, circuit design optimization, functional timing verification, and layout implementation ensuring DRC & LVS clean processing constraints[cite: 46].</p>
-                        <div class="card-tags"><span>IC Design</span><span>DRC / LVS Clean</span><span>Cadence [cite: 46, 55]</span></div>
+                        <div class="card-tags"><span>IC Design</span><span>DRC / LVS Clean</span><span>Cadence</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">Digital Architectures [cite: 48]</div>
+                    <div class="card-banner">Digital Architectures</div>
                     <div class="card-body">
-                        <h3>32-bit ARM ALU Design [cite: 48]</h3>
+                        <h3>32-bit ARM ALU Design</h3>
                         <p>Developed behavioral RTL code implementing clear processing arithmetic, logic, and shifting operations along with custom NZCV condition flag logic configurations[cite: 48].</p>
-                        <div class="card-tags"><span>Verilog</span><span>RTL Coding</span><span>ARM Architecture [cite: 48, 54]</span></div>
+                        <div class="card-tags"><span>Verilog</span><span>RTL Coding</span><span>ARM Architecture</span></div>
                     </div>
                 </div>
             </div>
 
             <div class="project-display-grid hidden-projects" id="extraProjects">
                 <div class="display-card">
-                    <div class="card-banner">Analog Integrated Systems [cite: 47]</div>
+                    <div class="card-banner">Analog Integrated Systems</div>
                     <div class="card-body">
-                        <h3>2-Stage OTA in 45nm CMOS [cite: 47]</h3>
+                        <h3>2-Stage OTA in 45nm CMOS</h3>
                         <p>Designed and simulated a custom high-gain, wide-bandwidth Operational Transconductance Amplifier (OTA) utilizing advanced CMOS technology nodes[cite: 47].</p>
-                        <div class="card-tags"><span>OTA</span><span>CMOS 45nm</span><span>Analog Layout [cite: 47]</span></div>
+                        <div class="card-tags"><span>OTA</span><span>CMOS 45nm</span><span>Analog Layout</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">Embedded Systems [cite: 43]</div>
+                    <div class="card-banner">Embedded Systems</div>
                     <div class="card-body">
-                        <h3>Smart Glove for Sign Language Translation [cite: 43]</h3>
+                        <h3>Smart Glove for Sign Language Translation</h3>
                         <p>Built a sensor-based embedded system hardware configuration capable of translating physical hand gesture coordinates into real-time text and speech readouts[cite: 43].</p>
-                        <div class="card-tags"><span>Sensors</span><span>STM32</span><span>Arduino [cite: 43, 57]</span></div>
+                        <div class="card-tags"><span>Sensors</span><span>STM32</span><span>Arduino</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">Power Distribution [cite: 50]</div>
+                    <div class="card-banner">Power Distribution</div>
                     <div class="card-body">
-                        <h3>2 kW Power System Grid Modeling [cite: 50]</h3>
+                        <h3>2 kW Power System Grid Modeling</h3>
                         <p>Conducted formal load flow analysis parameters and optimized a functional 2 kW power system model structured for an established IEEE-14 bus network[cite: 50].</p>
-                        <div class="card-tags"><span>ETAP</span><span>IEEE-14 Bus</span><span>Grid Analysis [cite: 50, 55]</span></div>
+                        <div class="card-tags"><span>ETAP</span><span>IEEE-14 Bus</span><span>Grid Analysis</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">Signal Processing [cite: 49]</div>
+                    <div class="card-banner">Signal Processing</div>
                     <div class="card-body">
-                        <h3>DSB-SC Transmission & SDR Analysis [cite: 49]</h3>
+                        <h3>DSB-SC Transmission & SDR Analysis</h3>
                         <p>Measured indoor path loss variables using a 915 MHz DSB-SC signal format combined with functional software-defined radio power analysis layouts[cite: 49].</p>
-                        <div class="card-tags"><span>DSB-SC</span><span>SDR</span><span>915 MHz [cite: 49]</span></div>
+                        <div class="card-tags"><span>DSB-SC</span><span>SDR</span><span>915 MHz</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">Electrical Infrastructure [cite: 44]</div>
+                    <div class="card-banner">Electrical Infrastructure</div>
                     <div class="card-body">
-                        <h3>10-Story Building Apartment Electrical Design [cite: 44]</h3>
+                        <h3>10-Story Building Apartment Electrical Design</h3>
                         <p>Completed comprehensive electrical structural layout design, wiring distribution paths, and total load calculation rules for a 3,500 Sq. Ft. floorplan[cite: 44].</p>
-                        <div class="card-tags"><span>AutoCAD</span><span>Load Balancing</span><span>Wiring Plans [cite: 44, 56]</span></div>
+                        <div class="card-tags"><span>AutoCAD</span><span>Load Balancing</span><span>Wiring Plans</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">Computer Vision [cite: 45]</div>
+                    <div class="card-banner">Computer Vision</div>
                     <div class="card-body">
-                        <h3>Automatic License Plate Recognition [cite: 45]</h3>
+                        <h3>Automatic License Plate Recognition</h3>
                         <p>Developed an automatic image processing framework and localized segmentation algorithm optimized for vehicle detection routines[cite: 45].</p>
-                        <div class="card-tags"><span>MATLAB</span><span>Image Processing</span><span>Computer Vision [cite: 45, 54]</span></div>
+                        <div class="card-tags"><span>MATLAB</span><span>Image Processing</span><span>Computer Vision</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">Hardware Engineering [cite: 52]</div>
+                    <div class="card-banner">Hardware Engineering</div>
                     <div class="card-body">
-                        <h3>BPSK Modulation & Demodulation [cite: 52]</h3>
+                        <h3>BPSK Modulation & Demodulation</h3>
                         <p>Simulated and successfully engineered custom Binary Phase Shift Keying modulation hardware blocks for data transceivers[cite: 52].</p>
-                        <div class="card-tags"><span>BPSK</span><span>Hardware Deployment</span><span>Communication [cite: 52]</span></div>
+                        <div class="card-tags"><span>BPSK</span><span>Hardware Deployment</span><span>Communication</span></div>
                     </div>
                 </div>
 
                 <div class="display-card">
-                    <div class="card-banner">Sustainable Environments [cite: 51]</div>
+                    <div class="card-banner">Sustainable Environments</div>
                     <div class="card-body">
-                        <h3>EcoBridge Smart Waste Management [cite: 51]</h3>
+                        <h3>EcoBridge Smart Waste Management</h3>
                         <p>Co-developed a smart monitoring network configuration for automated municipal waste segregation and environmental optimization metrics[cite: 51].</p>
-                        <div class="card-tags"><span>Automation</span><span>Resource Recovery</span><span>Smart Systems [cite: 51]</span></div>
+                        <div class="card-tags"><span>Automation</span><span>Resource Recovery</span><span>Smart Systems</span></div>
                     </div>
                 </div>
             </div>
