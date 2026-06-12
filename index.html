@@ -45,22 +45,24 @@
             margin-bottom: 5px;
         }
 
+        /* --- FIXED SIDE-BY-SIDE NAME LAYOUT --- */
         .huge-title {
             font-size: 4rem;
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -0.04em;
             margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .huge-title span.gray {
             color: var(--text-title-bg);
-            display: block;
         }
 
         .huge-title span.purple {
             color: var(--purple-accent);
-            display: inline-block;
         }
 
         #hero {
@@ -236,6 +238,7 @@
             letter-spacing: 0.03em;
         }
 
+        /* --- UPDATED THREE-COLUMN GRID STRATEGY --- */
         #projects {
             padding: 100px 0;
             background: var(--bg-sec);
@@ -248,9 +251,9 @@
             margin-top: 30px;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 900px) {
             .project-display-grid {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
 
@@ -372,7 +375,6 @@
             text-align: left;
         }
 
-        /* Form elements matching your requirements exactly */
         .form-row-side {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -439,7 +441,7 @@
     <section id="about">
         <div class="container">
             <div class="section-num">02 / Profile</div>
-            <h2 class="huge-title"><span class="gray">Engineer by craft,</span> creator by nature.</h2>
+            <h2 class="huge-title"><span class="gray">Engineer by craft,</span> <span class="purple">creator by nature.</span></h2>
             
             <div class="about-grid">
                 <div>
@@ -503,10 +505,10 @@
     <section id="projects">
         <div class="container">
             <div class="section-num">04 / Portfolio</div>
-            <h2 class="huge-title"><span class="gray">Selected</span> Projects.</h2>
+            <h2 class="huge-title"><span class="gray">Selected</span> <span class="purple">Projects.</span></h2>
             
             <div class="project-display-grid">
-                <div class="display-card" style="grid-column: 1 / -1; border-left: 4px solid var(--purple-accent);">
+                <div class="display-card">
                     <div class="card-banner">Capstone Highlight</div>
                     <div class="card-body">
                         <h3>2.45 GHz CMOS RF Receiver Front-End</h3>
@@ -617,7 +619,7 @@
     <section id="contact">
         <div class="container">
             <div class="section-num">05 / Contact</div>
-            <h2 class="huge-title">Let's <span class="purple">connect.</span></h2>
+            <h2 class="huge-title"><span class="gray">Let's</span> <span class="purple">connect.</span></h2>
             <p class="hero-subtitle" style="margin: 0 auto 20px auto;">Have a project in mind or looking for a dedicated researcher? Drop a line directly.</p>
             
             <div class="social-row">
@@ -629,7 +631,7 @@
             <div class="form-divider">Or Send A Message</div>
 
             <div class="form-container">
-                <form onsubmit="event.preventDefault(); alert('Message feature ready! Real backend routing requires integration with formspree.io or a similar handler.');">
+                <form onsubmit="event.preventDefault(); alert('Message feature ready!');">
                     <div class="form-row-side">
                         <div class="form-group">
                             <label>Name</label>
@@ -662,7 +664,6 @@
             if (extraSection.style.display === "grid") {
                 extraSection.style.display = "none";
                 btnText.innerHTML = "Show More";
-                // Smooth scroll back up to project section header when collapsing
                 document.getElementById("projects").scrollIntoView({ behavior: 'smooth' });
             } else {
                 extraSection.style.display = "grid";
