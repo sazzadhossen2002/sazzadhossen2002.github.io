@@ -220,7 +220,7 @@
         .timeline-bullets { padding-left: 20px; margin-top: 8px; }
         .timeline-bullets li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; text-align: justify; }
 
-        .hidden-history {
+        .hidden-history, .hidden-certs {
             display: none;
         }
 
@@ -712,7 +712,9 @@
                         <p>Saylor University | Feb 2024</p>
                     </div>
                 </div>
+            </div>
 
+            <div class="cert-grid hidden-certs" id="extraCerts" style="margin-top: 0;">
                 <div class="cert-card">
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-display"></i></div>
                     <div class="cert-info">
@@ -752,6 +754,10 @@
                         <p>English Olympiad | Jan 2018</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="toggle-container">
+                <button class="btn-outline" id="toggleCertsBtn" onclick="toggleCerts()" style="cursor: pointer;">Show More</button>
             </div>
 
         </div>
@@ -826,6 +832,20 @@
             } else {
                 extraAwardsSection.style.display = "grid";
                 btnAwardsText.innerHTML = "Show Less";
+            }
+        }
+
+        function toggleCerts() {
+            var extraCertsSection = document.getElementById("extraCerts");
+            var btnCertsText = document.getElementById("toggleCertsBtn");
+
+            if (extraCertsSection.style.display === "grid") {
+                extraCertsSection.style.display = "none";
+                btnCertsText.innerHTML = "Show More";
+                document.getElementById("recognition").scrollIntoView({ behavior: 'smooth' });
+            } else {
+                extraCertsSection.style.display = "grid";
+                btnCertsText.innerHTML = "Show Less";
             }
         }
 
