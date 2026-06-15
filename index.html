@@ -55,9 +55,7 @@
         }
 
         @media (max-width: 480px) {
-            .nav-links {
-                gap: 14px;
-            }
+            .nav-links { gap: 14px; }
         }
 
         .nav-links a {
@@ -181,9 +179,47 @@
         .about-image-container { width: 100%; max-width: 320px; margin: 0 auto; }
         .about-text { font-size: 1.05rem; color: var(--text-dark); margin-bottom: 16px; text-align: justify; }
 
-        .stats-row { display: flex; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+        .stats-row { display: flex; gap: 30px; margin-top: 20px; flex-wrap: wrap; margin-bottom: 30px; }
         .stat-box h4 { font-size: 2rem; font-weight: 800; color: var(--purple-accent); line-height: 1; }
         .stat-box p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
+
+        /* --- ACADEMIC TIMELINE STYLING --- */
+        .cv-section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--text-title-bg);
+            padding-bottom: 6px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .timeline-block {
+            padding: 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title { font-size: 1.05rem; font-weight: 700; color: var(--text-dark); }
+        .timeline-institution { font-size: 0.95rem; color: var(--purple-accent); font-weight: 600; }
+        .timeline-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+        .timeline-meta { font-size: 0.9rem; color: var(--text-dark); margin-bottom: 8px; font-style: italic; }
+        
+        .timeline-bullets { padding-left: 20px; margin-top: 8px; }
+        .timeline-bullets li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; text-align: justify; }
 
         #skills { padding: 60px 0; }
         .skills-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 15px; }
@@ -323,6 +359,76 @@
                     </div>
                 </div>
             </div>
+
+            <div class="cv-section-title"><i class="fa-solid fa-graduation-cap" style="color: var(--purple-accent); margin-right: 8px;"></i> Education</div>
+            
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="timeline-title">B.Sc. in Electrical & Electronic Engineering</div>
+                    <div class="timeline-date">Feb 2022 — Feb 2026</div>
+                </div>
+                <div class="timeline-institution">United International University (UIU)</div>
+                <div class="timeline-meta">Major: Electronics, Minor: Communication | CGPA: 3.92 / 4.00</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="timeline-title">Higher Secondary Certificate (HSC)</div>
+                    <div class="timeline-date">Passing Year: 2020</div>
+                </div>
+                <div class="timeline-institution">Government Science College</div>
+                <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="timeline-title">Secondary School Certificate (SSC)</div>
+                    <div class="timeline-date">Passing Year: 2018</div>
+                </div>
+                <div class="timeline-institution">Shiruail High School</div>
+                <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
+            </div>
+
+
+            <div class="cv-section-title"><i class="fa-solid fa-briefcase" style="color: var(--purple-accent); margin-right: 8px;"></i> Work Experience</div>
+
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="timeline-title">Teaching Assistant</div>
+                    <div class="timeline-date">Mar 2026 — Present</div>
+                </div>
+                <div class="timeline-institution">United International University (Dept. of EEE)</div>
+                <ul class="timeline-bullets">
+                    <li>Conducted laboratory demonstrations, led interactive structural tutorials, and provided critical student counseling blocks.</li>
+                    <li>Assisted senior departmental faculty with routine course management pipelines and comprehensive examination invigilation duties.</li>
+                    <li>Supported BAETE institutional accreditation tasks and coordinated official departmental engineering seminars.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="timeline-title">Undergraduate Assistant</div>
+                    <div class="timeline-date">Mar 2025 — Jul 2025</div>
+                </div>
+                <div class="timeline-institution">United International University (Dept. of EEE)</div>
+                <ul class="timeline-bullets">
+                    <li>Assisted primary course faculty during active lab layout classes and conducted extra operational tutorial sessions for complex coursework requirements.</li>
+                    <li>Provided student academic counseling tracks and structurally supported standard BAETE program accreditation parameters.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="timeline-title">Undergraduate Grader</div>
+                    <div class="timeline-date">2022 — 2024</div>
+                </div>
+                <div class="timeline-institution">United International University (Dept. of EEE)</div>
+                <ul class="timeline-bullets">
+                    <li>Evaluated technical layout assignments and structural laboratory reports for multiple specialized engineering courses.</li>
+                    <li>Maintained exact verification grading records and statistical student performance analysis layouts using advanced Microsoft Excel configurations.</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
