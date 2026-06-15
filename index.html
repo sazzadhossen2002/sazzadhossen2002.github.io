@@ -183,6 +183,29 @@
         .stat-box h4 { font-size: 2rem; font-weight: 800; color: var(--purple-accent); line-height: 1; }
         .stat-box p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
 
+        /* --- RESEARCH INTERESTS GRID SYSTEM --- */
+        .research-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+        }
+        @media (min-width: 768px) {
+            .research-grid { grid-template-columns: 1fr 1fr 1fr; }
+        }
+        .research-item {
+            background: #ffffff;
+            border-left: 4px solid var(--purple-accent);
+            border-top: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px;
+            border-radius: 0 6px 6px 0;
+        }
+        .research-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+        .research-item p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
         .cv-section-title {
             font-size: 1.1rem;
             text-transform: uppercase;
@@ -361,7 +384,7 @@
             </p>
             <div class="btn-group">
                 <a href="#contact" class="btn-purple">Available for Work <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#projects" class="btn-outline">View Portfolio</a>
+                <a href="CV_Sazzad_Hossen.pdf" target="_blank" class="btn-outline"><i class="fa-solid fa-file-arrow-down" style="color: var(--purple-accent);"></i> Download CV</a>
             </div>
         </div>
     </section>
@@ -409,6 +432,22 @@
                             <p>Competition Awards</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="cv-section-title"><i class="fa-solid fa-atom" style="color: var(--purple-accent); margin-right: 8px;"></i> Research Interests</div>
+            <div class="research-grid">
+                <div class="research-item">
+                    <h4>Analog & Mixed-Signal IC</h4>
+                    <p>Design, physical layout deployment, and optimization of low-power operational amplifiers and analog sub-circuits.</p>
+                </div>
+                <div class="research-item">
+                    <h4>RF Transceiver Systems</h4>
+                    <p>High-frequency communication hardware layouts, receiver chain blocks (LNA, Mixers), and parasitic extraction analysis.</p>
+                </div>
+                <div class="research-item">
+                    <h4>Digital VLSI Architectures</h4>
+                    <p>RTL hardware verification modeling, high-speed computational ALU optimization tracks, and Verilog compilation processing.</p>
                 </div>
             </div>
 
@@ -794,7 +833,7 @@
             <div class="form-divider">Or Send A Message</div>
 
             <div class="form-container">
-                <form action="https://formspree.io/f/mbdewlkl" method="POST">
+                <form action="https://formspree.io/f/mnnqgqwp" method="POST">
                     <div class="form-row-side">
                         <div class="form-group">
                             <label>Name</label>
