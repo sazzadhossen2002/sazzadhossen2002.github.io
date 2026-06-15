@@ -179,11 +179,10 @@
         .about-image-container { width: 100%; max-width: 320px; margin: 0 auto; }
         .about-text { font-size: 1.05rem; color: var(--text-dark); margin-bottom: 16px; text-align: justify; }
 
-        .stats-row { display: flex; gap: 30px; margin-top: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .stats-row { display: flex; gap: 30px; margin-top: 20px; flex-wrap: wrap; margin-bottom: 25px; }
         .stat-box h4 { font-size: 2rem; font-weight: 800; color: var(--purple-accent); line-height: 1; }
         .stat-box p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
 
-        /* --- ACADEMIC TIMELINE STYLING --- */
         .cv-section-title {
             font-size: 1.1rem;
             text-transform: uppercase;
@@ -191,8 +190,8 @@
             color: var(--text-dark);
             border-bottom: 2px solid var(--text-title-bg);
             padding-bottom: 6px;
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
@@ -220,6 +219,31 @@
         
         .timeline-bullets { padding-left: 20px; margin-top: 8px; }
         .timeline-bullets li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; text-align: justify; }
+
+        /* Hidden containers for secondary academic history */
+        .hidden-history {
+            display: none;
+        }
+
+        .arrow-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            transition: color 0.2s;
+        }
+        .arrow-btn:hover {
+            color: var(--purple-accent);
+        }
+        .arrow-btn i {
+            transition: transform 0.3s;
+        }
 
         #skills { padding: 60px 0; }
         .skills-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 15px; }
@@ -371,22 +395,24 @@
                 <div class="timeline-meta">Major: Electronics, Minor: Communication | CGPA: 3.92 / 4.00</div>
             </div>
 
-            <div class="timeline-block">
-                <div class="timeline-header">
-                    <div class="timeline-title">Higher Secondary Certificate (HSC)</div>
-                    <div class="timeline-date">Passing Year: 2020</div>
+            <div id="expandedEducation" class="hidden-history">
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Higher Secondary Certificate (HSC)</div>
+                        <div class="timeline-date">Passing Year: 2020</div>
+                    </div>
+                    <div class="timeline-institution">Government Science College</div>
+                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
                 </div>
-                <div class="timeline-institution">Government Science College</div>
-                <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
-            </div>
 
-            <div class="timeline-block">
-                <div class="timeline-header">
-                    <div class="timeline-title">Secondary School Certificate (SSC)</div>
-                    <div class="timeline-date">Passing Year: 2018</div>
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Secondary School Certificate (SSC)</div>
+                        <div class="timeline-date">Passing Year: 2018</div>
+                    </div>
+                    <div class="timeline-institution">Shiruail High School</div>
+                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
                 </div>
-                <div class="timeline-institution">Shiruail High School</div>
-                <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
             </div>
 
 
@@ -405,28 +431,36 @@
                 </ul>
             </div>
 
-            <div class="timeline-block">
-                <div class="timeline-header">
-                    <div class="timeline-title">Undergraduate Assistant</div>
-                    <div class="timeline-date">Mar 2025 — Jul 2025</div>
+            <div id="expandedExperience" class="hidden-history">
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Undergraduate Assistant</div>
+                        <div class="timeline-date">Mar 2025 — Jul 2025</div>
+                    </div>
+                    <div class="timeline-institution">United International University (Dept. of EEE)</div>
+                    <ul class="timeline-bullets">
+                        <li>Assisted primary course faculty during active lab layout classes and conducted extra operational tutorial sessions for complex coursework requirements.</li>
+                        <li>Provided student academic counseling tracks and structurally supported standard BAETE program accreditation parameters.</li>
+                    </ul>
                 </div>
-                <div class="timeline-institution">United International University (Dept. of EEE)</div>
-                <ul class="timeline-bullets">
-                    <li>Assisted primary course faculty during active lab layout classes and conducted extra operational tutorial sessions for complex coursework requirements.</li>
-                    <li>Provided student academic counseling tracks and structurally supported standard BAETE program accreditation parameters.</li>
-                </ul>
+
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Undergraduate Grader</div>
+                        <div class="timeline-date">2022 — 2024</div>
+                    </div>
+                    <div class="timeline-institution">United International University (Dept. of EEE)</div>
+                    <ul class="timeline-bullets">
+                        <li>Evaluated technical layout assignments and structural laboratory reports for multiple specialized engineering courses.</li>
+                        <li>Maintained exact verification grading records and statistical student performance analysis layouts using advanced Microsoft Excel configurations.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-block">
-                <div class="timeline-header">
-                    <div class="timeline-title">Undergraduate Grader</div>
-                    <div class="timeline-date">2022 — 2024</div>
-                </div>
-                <div class="timeline-institution">United International University (Dept. of EEE)</div>
-                <ul class="timeline-bullets">
-                    <li>Evaluated technical layout assignments and structural laboratory reports for multiple specialized engineering courses.</li>
-                    <li>Maintained exact verification grading records and statistical student performance analysis layouts using advanced Microsoft Excel configurations.</li>
-                </ul>
+            <div style="text-align: left;">
+                <button class="arrow-btn" id="historyToggleBtn" onclick="toggleCVHistory()">
+                    <span>Show More History</span> <i class="fa-solid fa-chevron-down" id="arrowIcon"></i>
+                </button>
             </div>
 
         </div>
@@ -694,6 +728,26 @@
             } else {
                 extraAwardsSection.style.display = "grid";
                 btnAwardsText.innerHTML = "Show Less";
+            }
+        }
+
+        // Dedicated toggle mechanism to unroll hidden CV history cards smoothly
+        function toggleCVHistory() {
+            var eduContainer = document.getElementById("expandedEducation");
+            var expContainer = document.getElementById("expandedExperience");
+            var toggleBtn = document.getElementById("historyToggleBtn");
+            var arrowIcon = document.getElementById("arrowIcon");
+
+            if (eduContainer.style.display === "block") {
+                eduContainer.style.display = "none";
+                expContainer.style.display = "none";
+                toggleBtn.querySelector('span').innerHTML = "Show More History";
+                arrowIcon.style.transform = "rotate(0deg)";
+            } else {
+                eduContainer.style.display = "block";
+                expContainer.style.display = "block";
+                toggleBtn.querySelector('span').innerHTML = "Show Less History";
+                arrowIcon.style.transform = "rotate(180deg)";
             }
         }
     </script>
