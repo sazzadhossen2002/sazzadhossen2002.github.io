@@ -220,7 +220,8 @@
         .timeline-bullets { padding-left: 20px; margin-top: 8px; }
         .timeline-bullets li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; text-align: justify; }
 
-        .hidden-history, .hidden-certs {
+        /* FIXED HIDING RULE ROOT CAUSE */
+        .hidden-history, .hidden-projects, .hidden-awards, .hidden-certs {
             display: none;
         }
 
@@ -291,7 +292,6 @@
         .card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
         .card-tags span { font-size: 0.7rem; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
         
-        .hidden-projects, .hidden-awards { display: none; }
         .toggle-container { text-align: center; margin-top: 30px; }
 
         .gallery-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
@@ -320,24 +320,15 @@
         }
         .cert-info h4 { font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 2px; }
         .cert-info p { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
-
-        #contact { padding: 60px 0; text-align: center; }
-        .social-row { display: flex; justify-content: center; gap: 12px; margin: 20px 0 35px 0; }
-        .social-box {
-            width: 44px; height: 44px; border: 1px solid #cbd5e1; border-radius: 4px;
-            display: flex; align-items: center; justify-content: center; color: var(--text-dark);
-            text-decoration: none; font-size: 1.1rem; transition: all 0.2s;
+        
+        /* Document Link Styling */
+        .doc-link-bar {
+            margin-top: auto; display: flex; gap: 16px; border-top: 1px solid #f1f5f9; padding-top: 12px;
         }
-        .social-box:hover { border-color: var(--purple-accent); color: var(--purple-accent); transform: translateY(-2px); }
-        
-        .form-divider { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 25px; }
-        .form-container { max-width: 700px; margin: 0 auto; text-align: left; }
-        .form-row-side { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
-        @media (max-width: 600px) { .form-row-side { grid-template-columns: 1fr; gap: 15px; } }
-        
-        .form-group label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; color: var(--text-dark); }
-        .form-group input, .form-group textarea { width: 100%; background: #000000; border: none; border-radius: 4px; padding: 14px; color: #ffffff; font-size: 0.9rem; }
-        .form-group textarea { height: 120px; resize: none; margin-bottom: 20px; }
+        .doc-link-bar a {
+            color: var(--purple-accent); text-decoration: none; font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;
+        }
+        .doc-link-bar a:hover { color: var(--purple-hover); }
     </style>
 </head>
 <body>
@@ -436,7 +427,6 @@
                 </div>
             </div>
 
-
             <div class="cv-section-title"><i class="fa-solid fa-briefcase" style="color: var(--purple-accent); margin-right: 8px;"></i> Work Experience</div>
 
             <div class="timeline-block">
@@ -527,7 +517,13 @@
                     <div class="card-body">
                         <h3>2.45 GHz CMOS RF Receiver Front-End</h3>
                         <p>Designed and simulated a complete receiver front-end chain by seamlessly integrating BPF, LNA, Mixer, and LPF blocks to optimize signal processing and minimize system noise floor parameters. Realized an overall conversion gain of 50 dB with an intermediate frequency of 10-20 MHz.</p>
-                        <div class="card-tags"><span>Cadence Virtuoso</span><span>45nm CMOS</span><span>RF Layout</span><span>Spectre</span></div>
+                        <div class="card-tags" style="margin-bottom: 12px;">
+                            <span>Cadence Virtuoso</span><span>45nm CMOS</span><span>RF Layout</span><span>Spectre</span>
+                        </div>
+                        <div class="doc-link-bar">
+                            <a href="capstone_report.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> Report</a>
+                            <a href="capstone_slides.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Slides</a>
+                        </div>
                     </div>
                 </div>
 
@@ -536,7 +532,13 @@
                     <div class="card-body">
                         <h3>8-bit Carry Save Adder Schematic & Layout</h3>
                         <p>Completed full schematic simulation, circuit design optimization, functional timing verification, and layout implementation ensuring DRC & LVS clean processing constraints.</p>
-                        <div class="card-tags"><span>IC Design</span><span>DRC / LVS Clean</span><span>Cadence</span></div>
+                        <div class="card-tags" style="margin-bottom: 12px;">
+                            <span>IC Design</span><span>DRC / LVS Clean</span><span>Cadence</span>
+                        </div>
+                        <div class="doc-link-bar">
+                            <a href="adder_report.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> Report</a>
+                            <a href="adder_slides.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Slides</a>
+                        </div>
                     </div>
                 </div>
 
@@ -545,7 +547,13 @@
                     <div class="card-body">
                         <h3>32-bit ARM ALU Design</h3>
                         <p>Developed behavioral RTL code implementing clear processing arithmetic, logic, and shifting operations along with custom NZCV condition flag logic configurations.</p>
-                        <div class="card-tags"><span>Verilog</span><span>RTL Coding</span><span>ARM Architecture</span></div>
+                        <div class="card-tags" style="margin-bottom: 12px;">
+                            <span>Verilog</span><span>RTL Coding</span><span>ARM Architecture</span>
+                        </div>
+                        <div class="doc-link-bar">
+                            <a href="alu_report.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> Report</a>
+                            <a href="alu_slides.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> Slides</a>
+                        </div>
                     </div>
                 </div>
             </div>
