@@ -220,7 +220,7 @@
         .timeline-bullets { padding-left: 20px; margin-top: 8px; }
         .timeline-bullets li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; text-align: justify; }
 
-        .hidden-history, .hidden-projects, .hidden-awards {
+        .hidden-history {
             display: none;
         }
 
@@ -271,7 +271,7 @@
         .project-display-grid, .gallery-grid, .cert-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
         
         @media (min-width: 900px) { 
-            .project-display-grid, .gallery-grid { grid-template-columns: 1fr 1fr 1fr; }
+            .project-display-grid, .gallery-grid, .cert-grid { grid-template-columns: 1fr 1fr 1fr; }
             .cert-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -574,7 +574,7 @@
                 </div>
             </div>
 
-            <div class="project-display-grid hidden-projects" id="extraProjects">
+            <div class="project-display-grid" id="extraProjects" style="display: none; margin-top: 20px;">
                 <div class="display-card">
                     <div class="card-banner">Analog Integrated Systems</div>
                     <div class="card-body">
@@ -682,7 +682,7 @@
                 </div>
             </div>
 
-            <div class="gallery-grid hidden-awards" id="extraAwards">
+            <div class="gallery-grid" id="extraAwards" style="display: none; margin-top: 20px;">
                 <div class="gallery-card">
                     <img src="mist.robulattion.jpg" alt="MIST Robolution VLSI Runner-Up">
                     <div class="gallery-caption">
@@ -831,6 +831,7 @@
     </section>
 
     <script>
+        // FIXED PROJECT TOGGLE
         function toggleProjects() {
             var extraSection = document.getElementById("extraProjects");
             var btnText = document.getElementById("toggleBtn");
@@ -845,6 +846,7 @@
             }
         }
 
+        // FIXED AWARDS TOGGLE
         function toggleAwards() {
             var extraAwardsSection = document.getElementById("extraAwards");
             var btnAwardsText = document.getElementById("toggleAwardsBtn");
