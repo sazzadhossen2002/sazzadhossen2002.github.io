@@ -241,7 +241,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
         }
         .pub-badge {
             display: inline-block;
@@ -294,7 +294,7 @@
         .timeline-bullets { padding-left: 20px; margin-top: 8px; }
         .timeline-bullets li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; text-align: justify; }
 
-        .hidden-history {
+        .hidden-section {
             display: none;
         }
 
@@ -302,13 +302,14 @@
             background: transparent;
             border: none;
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 15px;
+            margin-top: 5px;
+            margin-bottom: 15px;
             transition: color 0.2s;
         }
         .arrow-btn:hover {
@@ -345,7 +346,7 @@
         .project-display-grid, .gallery-grid, .cert-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
         
         @media (min-width: 900px) { 
-            .project-display-grid, .gallery-grid, .cert-grid { grid-template-columns: 1fr 1fr 1fr; }
+            .project-display-grid, .gallery-grid { grid-template-columns: 1fr 1fr 1fr; }
             .cert-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -469,7 +470,7 @@
                         I'm Sazzad Hossen — an EEE graduate with a 3.92 CGPA from United International University. I specialize in VLSI, structural hardware optimization, and front-end communication layout nodes, translating complex technical problems into clean, high-performance physical circuitry configurations.
                     </p>
                     <p class="about-text" style="font-size: 0.95rem; color: var(--text-muted);">
-                        Currently working as an Analog IC Design Intern at Silicon Array, performing transistor-level schematic design, custom physical layout, and DRC/LVS physical verification[cite: 15, 17].
+                        Currently working as an Analog IC Design Intern at Silicon Array, performing transistor-level schematic design, custom physical layout, and DRC/LVS physical verification.
                     </p>
                     <div class="stats-row">
                         <div class="stat-box">
@@ -493,15 +494,15 @@
             <div class="research-grid">
                 <div class="research-item">
                     <h4>Analog & Mixed-Signal IC</h4>
-                    <p>Design, physical layout deployment, and optimization of low-power operational amplifiers and analog sub-circuits[cite: 15].</p>
+                    <p>Design, physical layout deployment, and optimization of low-power operational amplifiers and analog sub-circuits.</p>
                 </div>
                 <div class="research-item">
                     <h4>RF Transceiver Systems</h4>
-                    <p>High-frequency communication hardware layouts, receiver chain blocks (LNA, Mixers), and parasitic extraction analysis[cite: 15].</p>
+                    <p>High-frequency communication hardware layouts, receiver chain blocks (LNA, Mixers), and parasitic extraction analysis.</p>
                 </div>
                 <div class="research-item">
                     <h4>Digital VLSI Architectures</h4>
-                    <p>RTL hardware verification modeling, high-speed computational ALU optimization tracks, and Verilog compilation processing[cite: 15].</p>
+                    <p>RTL hardware verification modeling, high-speed computational ALU optimization tracks, and Verilog compilation processing.</p>
                 </div>
             </div>
 
@@ -516,19 +517,14 @@
                     <div>
                         <span class="pub-badge"><i class="fa-solid fa-microphone"></i> IEEE Conference Presentation</span>
                         <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px;">
-                            Design and Performance Analysis of a 2.45 GHz Low-Power RF Receiver Using 45nm CMOS Technology in Cadence Virtuoso[cite: 15, 17]
+                            Design and Performance Analysis of a 2.45 GHz Low-Power RF Receiver Using 45nm CMOS Technology in Cadence Virtuoso
                         </h3>
                         <p style="font-size: 0.88rem; color: var(--purple-accent); font-weight: 600; margin-bottom: 6px;">
-                            IEEE MARSCON 2026 — Ahsanullah University of Science and Technology, Dhaka[cite: 15, 17]
+                            IEEE MARSCON 2026 — Ahsanullah University of Science and Technology, Dhaka
                         </p>
-                        <p style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 8px;">
-                            <strong>Authors:</strong> Sazzad Hossen, Suvom Karmakar, Tahman Hossain, Azad Hossain Saykat, Dr. Raqibul Mostafa, Dr. Md. Hasanuzzaman[cite: 15, 17]. <em>(To appear in IEEE Xplore)</em>[cite: 15].
+                        <p style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.4;">
+                            <strong>Authors:</strong> Sazzad Hossen, Suvom Karmakar, Tahman Hossain, Azad Hossain Saykat, Dr. Raqibul Mostafa, Dr. Md. Hasanuzzaman. <em>(To appear in IEEE Xplore)</em>
                         </p>
-                    </div>
-                    <div style="border-top: 1px solid #f1f5f9; padding-top: 12px; margin-top: 8px;">
-                        <a href="conference_slides.pdf" target="_blank" style="color: var(--purple-accent); text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
-                            <i class="fa-regular fa-file-powerpoint"></i> View Presentation Slides
-                        </a>
                     </div>
                 </div>
             </div>
@@ -536,94 +532,107 @@
             <!-- WORK EXPERIENCE -->
             <div class="cv-section-title"><i class="fa-solid fa-briefcase" style="color: var(--purple-accent); margin-right: 8px;"></i> Work Experience</div>
 
-            <!-- 1. Silicon Array (Current) -->
+            <!-- 1. Silicon Array (Current - Always Visible) -->
             <div class="timeline-block">
                 <div class="timeline-header">
                     <div class="timeline-title">Analog IC Design Intern</div>
                     <div class="timeline-date">Jul 2026 — Present</div>
                 </div>
-                <div class="timeline-institution">Silicon Array — Dhaka, Bangladesh[cite: 15, 17]</div>
+                <div class="timeline-institution">Silicon Array — Dhaka, Bangladesh</div>
                 <ul class="timeline-bullets">
-                    <li>Design and optimize transistor-level analog IC schematics and run circuit simulations[cite: 15].</li>
-                    <li>Implement custom physical layouts with a focus on floorplanning, matching, and symmetry[cite: 15].</li>
-                    <li>Execute DRC and LVS checks to verify layout-to-schematic accuracy[cite: 15].</li>
+                    <li>Design and optimize transistor-level analog IC schematics and run circuit simulations.</li>
+                    <li>Implement custom physical layouts with a focus on floorplanning, matching, and symmetry.</li>
+                    <li>Execute DRC and LVS checks to verify layout-to-schematic accuracy.</li>
                 </ul>
             </div>
 
-            <!-- 2. Teaching Assistant -->
-            <div class="timeline-block">
-                <div class="timeline-header">
-                    <div class="timeline-title">Teaching Assistant</div>
-                    <div class="timeline-date">Mar 2026 — Jul 2026</div>
+            <!-- Hidden Previous Experience -->
+            <div id="extraExperience" class="hidden-section">
+                <!-- Teaching Assistant -->
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Teaching Assistant</div>
+                        <div class="timeline-date">Mar 2026 — Jul 2026</div>
+                    </div>
+                    <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh</div>
+                    <ul class="timeline-bullets">
+                        <li>Conducted lab demonstrations, led tutorials, and provided student counseling.</li>
+                        <li>Assisted faculty with course management and exam invigilation.</li>
+                    </ul>
                 </div>
-                <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh[cite: 15]</div>
-                <ul class="timeline-bullets">
-                    <li>Conducted lab demonstrations, led tutorials, and provided student counseling[cite: 15].</li>
-                    <li>Assisted faculty with course management and exam invigilation[cite: 15].</li>
-                </ul>
-            </div>
 
-            <div id="expandedExperience" class="hidden-history">
+                <!-- Undergraduate Assistant -->
                 <div class="timeline-block">
                     <div class="timeline-header">
                         <div class="timeline-title">Undergraduate Assistant</div>
                         <div class="timeline-date">Mar 2025 — Mar 2026</div>
                     </div>
-                    <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh[cite: 15]</div>
+                    <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh</div>
                     <ul class="timeline-bullets">
-                        <li>Assisted faculty during lab classes and conducted extra tutorial sessions for difficult coursework[cite: 15].</li>
-                        <li>Provided student academic counseling and supported BAETE program accreditation activities[cite: 15].</li>
+                        <li>Assisted faculty during lab classes and conducted extra tutorial sessions for difficult coursework.</li>
+                        <li>Provided student academic counseling and supported BAETE program accreditation activities.</li>
                     </ul>
                 </div>
 
+                <!-- Undergraduate Grader -->
                 <div class="timeline-block">
                     <div class="timeline-header">
                         <div class="timeline-title">Undergraduate Grader</div>
                         <div class="timeline-date">2022 — 2024</div>
                     </div>
-                    <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh[cite: 15]</div>
+                    <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh</div>
                     <ul class="timeline-bullets">
-                        <li>Evaluated assignments and lab reports for multiple EEE courses[cite: 15].</li>
-                        <li>Maintained grading records and performance analysis using Excel[cite: 15].</li>
+                        <li>Evaluated assignments and lab reports for multiple EEE courses.</li>
+                        <li>Maintained grading records and performance analysis using Excel.</li>
                     </ul>
                 </div>
+            </div>
+
+            <div style="text-align: left;">
+                <button class="arrow-btn" id="expToggleBtn" onclick="toggleExperience()">
+                    <span>Show More Experience</span> <i class="fa-solid fa-chevron-down" id="expArrowIcon"></i>
+                </button>
             </div>
 
             <!-- EDUCATION -->
             <div class="cv-section-title"><i class="fa-solid fa-graduation-cap" style="color: var(--purple-accent); margin-right: 8px;"></i> Education</div>
             
+            <!-- B.Sc. Degree (Always Visible) -->
             <div class="timeline-block">
                 <div class="timeline-header">
                     <div class="timeline-title">B.Sc. in Electrical & Electronic Engineering</div>
                     <div class="timeline-date">Feb 2022 — Feb 2026</div>
                 </div>
-                <div class="timeline-institution">United International University (UIU)[cite: 15]</div>
-                <div class="timeline-meta">Major: Electronics, Minor: Communication | CGPA: 3.92 / 4.00[cite: 15]</div>
+                <div class="timeline-institution">United International University (UIU)</div>
+                <div class="timeline-meta">Major: Electronics, Minor: Communication | CGPA: 3.92 / 4.00</div>
             </div>
 
-            <div id="expandedEducation" class="hidden-history">
+            <!-- Hidden Previous Education -->
+            <div id="extraEducation" class="hidden-section">
+                <!-- HSC -->
                 <div class="timeline-block">
                     <div class="timeline-header">
                         <div class="timeline-title">Higher Secondary Certificate (HSC)</div>
                         <div class="timeline-date">Passing Year: 2020</div>
                     </div>
-                    <div class="timeline-institution">Government Science College[cite: 15]</div>
-                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00[cite: 15]</div>
+                    <div class="timeline-institution">Government Science College</div>
+                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
                 </div>
 
+                <!-- SSC -->
                 <div class="timeline-block">
                     <div class="timeline-header">
                         <div class="timeline-title">Secondary School Certificate (SSC)</div>
                         <div class="timeline-date">Passing Year: 2018</div>
                     </div>
-                    <div class="timeline-institution">Shiruail High School[cite: 15]</div>
-                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00[cite: 15]</div>
+                    <div class="timeline-institution">Shiruail High School</div>
+                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
                 </div>
             </div>
 
             <div style="text-align: left;">
-                <button class="arrow-btn" id="historyToggleBtn" onclick="toggleCVHistory()">
-                    <span>Show More History</span> <i class="fa-solid fa-chevron-down" id="arrowIcon"></i>
+                <button class="arrow-btn" id="eduToggleBtn" onclick="toggleEducation()">
+                    <span>Show More Education</span> <i class="fa-solid fa-chevron-down" id="eduArrowIcon"></i>
                 </button>
             </div>
 
@@ -671,7 +680,7 @@
                     <div class="card-banner">Capstone Highlight</div>
                     <div class="card-body">
                         <h3>2.45 GHz CMOS RF Receiver Front-End</h3>
-                        <p>Designed and simulated a complete receiver front-end chain by seamlessly integrating BPF, LNA, Mixer, and LPF blocks to optimize signal processing and minimize system noise floor parameters[cite: 15]. Realized an overall conversion gain of 50 dB with an intermediate frequency of 10-20 MHz[cite: 15].</p>
+                        <p>Designed and simulated a complete receiver front-end chain by seamlessly integrating BPF, LNA, Mixer, and LPF blocks to optimize signal processing and minimize system noise floor parameters. Realized an overall conversion gain of 50 dB with an intermediate frequency of 10-20 MHz.</p>
                         <div class="card-tags" style="margin-bottom: 12px;">
                             <span>Cadence Virtuoso</span><span>45nm CMOS</span><span>RF Layout</span><span>Spectre</span>
                         </div>
@@ -686,7 +695,7 @@
                     <div class="card-banner">VLSI Engineering</div>
                     <div class="card-body">
                         <h3>8-bit Carry Save Adder Schematic & Layout</h3>
-                        <p>Completed full schematic simulation, circuit design optimization, functional timing verification, and layout implementation ensuring DRC & LVS clean processing constraints[cite: 15].</p>
+                        <p>Completed full schematic simulation, circuit design optimization, functional timing verification, and layout implementation ensuring DRC & LVS clean processing constraints.</p>
                         <div class="card-tags" style="margin-bottom: 12px;">
                             <span>IC Design</span><span>DRC / LVS Clean</span><span>Cadence</span>
                         </div>
@@ -697,7 +706,7 @@
                     <div class="card-banner">Digital Architectures</div>
                     <div class="card-body">
                         <h3>32-bit ARM ALU Design</h3>
-                        <p>Developed behavioral RTL code implementing clear processing arithmetic, logic, and shifting operations along with custom NZCV condition flag logic configurations[cite: 15].</p>
+                        <p>Developed behavioral RTL code implementing clear processing arithmetic, logic, and shifting operations along with custom NZCV condition flag logic configurations.</p>
                         <div class="card-tags" style="margin-bottom: 12px;">
                             <span>Verilog</span><span>RTL Coding</span><span>ARM Architecture</span>
                         </div>
@@ -710,7 +719,7 @@
                     <div class="card-banner">Analog Integrated Systems</div>
                     <div class="card-body">
                         <h3>2-Stage OTA in 45nm CMOS</h3>
-                        <p>Designed and simulated a custom high-gain, wide-bandwidth Operational Transconductance Amplifier (OTA) utilizing advanced CMOS technology nodes[cite: 15].</p>
+                        <p>Designed and simulated a custom high-gain, wide-bandwidth Operational Transconductance Amplifier (OTA) utilizing advanced CMOS technology nodes.</p>
                         <div class="card-tags"><span>OTA</span><span>CMOS 45nm</span><span>Analog Layout</span></div>
                     </div>
                 </div>
@@ -719,7 +728,7 @@
                     <div class="card-banner">Analog Integrated Systems</div>
                     <div class="card-body">
                         <h3>Fully Differential Folded-Cascode OTA</h3>
-                        <p>Designed in 45nm CMOS using gm/ID methodology and thoroughly verified in Cadence Virtuoso[cite: 15].</p>
+                        <p>Designed in 45nm CMOS using gm/ID methodology and thoroughly verified in Cadence Virtuoso.</p>
                         <div class="card-tags"><span>gm/ID</span><span>Folded Cascode</span><span>Cadence</span></div>
                     </div>
                 </div>
@@ -728,7 +737,7 @@
                     <div class="card-banner">Embedded Systems</div>
                     <div class="card-body">
                         <h3>Smart Glove for Sign Language Translation</h3>
-                        <p>Built a sensor-based embedded system hardware configuration capable of translating physical hand gesture coordinates into real-time text and speech readouts[cite: 15].</p>
+                        <p>Built a sensor-based embedded system hardware configuration capable of translating physical hand gesture coordinates into real-time text and speech readouts.</p>
                         <div class="card-tags"><span>Sensors</span><span>STM32</span><span>Arduino</span></div>
                     </div>
                 </div>
@@ -737,7 +746,7 @@
                     <div class="card-banner">Power Distribution</div>
                     <div class="card-body">
                         <h3>2 kW Power System Grid Modeling</h3>
-                        <p>Conducted formal load flow analysis parameters and optimized a functional 2 kW power system model structured for an established IEEE-14 bus network[cite: 15].</p>
+                        <p>Conducted formal load flow analysis parameters and optimized a functional 2 kW power system model structured for an established IEEE-14 bus network.</p>
                         <div class="card-tags"><span>ETAP</span><span>IEEE-14 Bus</span><span>Grid Analysis</span></div>
                     </div>
                 </div>
@@ -746,7 +755,7 @@
                     <div class="card-banner">Signal Processing</div>
                     <div class="card-body">
                         <h3>DSB-SC Transmission & SDR Analysis</h3>
-                        <p>Measured indoor path loss variables using a 915 MHz DSB-SC signal format combined with functional software-defined radio power analysis layouts[cite: 15].</p>
+                        <p>Measured indoor path loss variables using a 915 MHz DSB-SC signal format combined with functional software-defined radio power analysis layouts.</p>
                         <div class="card-tags"><span>DSB-SC</span><span>SDR</span><span>915 MHz</span></div>
                     </div>
                 </div>
@@ -764,7 +773,7 @@
                     <div class="card-banner">Computer Vision</div>
                     <div class="card-body">
                         <h3>Automatic License Plate Recognition</h3>
-                        <p>Developed an automatic image processing framework and localized segmentation algorithm optimized for vehicle detection routines[cite: 15].</p>
+                        <p>Developed an automatic image processing framework and localized segmentation algorithm optimized for vehicle detection routines.</p>
                         <div class="card-tags"><span>MATLAB</span><span>Image Processing</span><span>Computer Vision</span></div>
                     </div>
                 </div>
@@ -773,7 +782,7 @@
                     <div class="card-banner">Hardware Engineering</div>
                     <div class="card-body">
                         <h3>BPSK Modulation & Demodulation</h3>
-                        <p>Simulated and successfully engineered custom Binary Phase Shift Keying modulation hardware blocks for data transceivers[cite: 15].</p>
+                        <p>Simulated and successfully engineered custom Binary Phase Shift Keying modulation hardware blocks for data transceivers.</p>
                         <div class="card-tags"><span>BPSK</span><span>Hardware Deployment</span><span>Communication</span></div>
                     </div>
                 </div>
@@ -795,21 +804,21 @@
                 <div class="gallery-card">
                     <img src="vlsi2025.jpg" alt="VLSI Design Competition Champion">
                     <div class="gallery-caption">
-                        <strong>Champion</strong> — VLSI Design Competition, UIU EEE Day 2025[cite: 15]
+                        <strong>Champion</strong> — VLSI Design Competition, UIU EEE Day 2025
                     </div>
                 </div>
 
                 <div class="gallery-card">
                     <img src="vlsi2.jpg" alt="Junior Intra-University VLSI Design Competition Champion">
                     <div class="gallery-caption">
-                        <strong>Champion</strong> — Junior Intra-University VLSI Design Competition[cite: 15]
+                        <strong>Champion</strong> — Junior Intra-University VLSI Design Competition
                     </div>
                 </div>
 
                 <div class="gallery-card">
                     <img src="matlab.jpg" alt="MATLAB Simulate and Innovate Champion">
                     <div class="gallery-caption">
-                        <strong>Champion</strong> — MATLAB: Simulate & Innovate Competition[cite: 15]
+                        <strong>Champion</strong> — MATLAB: Simulate & Innovate Competition
                     </div>
                 </div>
             </div>
@@ -818,14 +827,14 @@
                 <div class="gallery-card">
                     <img src="mist.robulattion.jpg" alt="MIST Robolution VLSI Runner-Up">
                     <div class="gallery-caption">
-                        <strong>1st Runner-Up</strong> — National VLSI Design Competition, MIST Robolution[cite: 15]
+                        <strong>1st Runner-Up</strong> — National VLSI Design Competition, MIST Robolution
                     </div>
                 </div>
 
                 <div class="gallery-card">
                     <img src="projectshow.jpg" alt="EEE Project Show Runner-Up">
                     <div class="gallery-caption">
-                        <strong>Runner-Up</strong> — EEE Project Show (Senior Category)[cite: 15]
+                        <strong>Runner-Up</strong> — EEE Project Show (Senior Category)
                     </div>
                 </div>
             </div>
@@ -842,7 +851,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-user-tie"></i></div>
                     <div class="cert-info">
                         <h4>Professional Skills Development</h4>
-                        <p>United International University | Dec 2025[cite: 15]</p>
+                        <p>United International University | Dec 2025</p>
                     </div>
                 </div>
 
@@ -858,7 +867,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
                     <div class="cert-info">
                         <h4>Matlab-Simulate & Innovate</h4>
-                        <p>United International University | Dec 2024[cite: 15]</p>
+                        <p>United International University | Dec 2024</p>
                     </div>
                 </div>
 
@@ -884,7 +893,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-comments"></i></div>
                     <div class="cert-info">
                         <h4>Presentation & Public Speaking</h4>
-                        <p>10 Minute School | Jun 2023[cite: 15]</p>
+                        <p>10 Minute School | Jun 2023</p>
                     </div>
                 </div>
 
@@ -892,7 +901,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-network-wired"></i></div>
                     <div class="cert-info">
                         <h4>DevOps for Engineers</h4>
-                        <p>Cisco | Feb 2024[cite: 15]</p>
+                        <p>Cisco | Feb 2024</p>
                     </div>
                 </div>
 
@@ -900,7 +909,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="cert-info">
                         <h4>Introduction to Networks</h4>
-                        <p>Cisco | Apr 2023[cite: 15]</p>
+                        <p>Cisco | Apr 2023</p>
                     </div>
                 </div>
 
@@ -1007,21 +1016,34 @@
             }
         }
 
-        function toggleCVHistory() {
-            var eduContainer = document.getElementById("expandedEducation");
-            var expContainer = document.getElementById("expandedExperience");
-            var toggleBtn = document.getElementById("historyToggleBtn");
-            var arrowIcon = document.getElementById("arrowIcon");
+        function toggleExperience() {
+            var expContainer = document.getElementById("extraExperience");
+            var toggleBtn = document.getElementById("expToggleBtn");
+            var arrowIcon = document.getElementById("expArrowIcon");
+
+            if (expContainer.style.display === "block") {
+                expContainer.style.display = "none";
+                toggleBtn.querySelector('span').innerHTML = "Show More Experience";
+                arrowIcon.style.transform = "rotate(0deg)";
+            } else {
+                expContainer.style.display = "block";
+                toggleBtn.querySelector('span').innerHTML = "Show Less Experience";
+                arrowIcon.style.transform = "rotate(180deg)";
+            }
+        }
+
+        function toggleEducation() {
+            var eduContainer = document.getElementById("extraEducation");
+            var toggleBtn = document.getElementById("eduToggleBtn");
+            var arrowIcon = document.getElementById("eduArrowIcon");
 
             if (eduContainer.style.display === "block") {
                 eduContainer.style.display = "none";
-                expContainer.style.display = "none";
-                toggleBtn.querySelector('span').innerHTML = "Show More History";
+                toggleBtn.querySelector('span').innerHTML = "Show More Education";
                 arrowIcon.style.transform = "rotate(0deg)";
             } else {
                 eduContainer.style.display = "block";
-                expContainer.style.display = "block";
-                toggleBtn.querySelector('span').innerHTML = "Show Less History";
+                toggleBtn.querySelector('span').innerHTML = "Show Less Education";
                 arrowIcon.style.transform = "rotate(180deg)";
             }
         }
