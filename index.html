@@ -414,11 +414,35 @@
         
         .form-divider { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 25px; }
         .form-container { max-width: 700px; margin: 0 auto; text-align: left; }
-        .form-row-side { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        
+        /* EXACT BASELINE ALIGNMENT FOR NAME & EMAIL */
+        .form-row-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: start;
+        }
         @media (max-width: 600px) { .form-row-side { grid-template-columns: 1fr; gap: 15px; } }
         
-        .form-group label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; color: var(--text-dark); }
-        .form-group input, .form-group textarea { width: 100%; background: #000000; border: none; border-radius: 4px; padding: 14px; color: #ffffff; font-size: 0.9rem; }
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background: #000000;
+            border: none;
+            border-radius: 4px;
+            padding: 14px;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
         .form-group textarea { height: 120px; resize: none; margin-bottom: 20px; }
     </style>
 </head>
@@ -433,7 +457,7 @@
                 <span class="purple">Hossen.</span>
             </h1>
             <p class="hero-subtitle">
-                Electrical & Electronic Engineer crafting high-performance analog layout structures, custom VLSI design nodes, and communication sub-systems.
+                Electrical & Electronic Engineering graduate with a strong interest in Analog IC design, VLSI layouts, and RF circuits.
             </p>
             <div class="btn-group">
                 <a href="#contact" class="btn-purple">Available for Work <i class="fa-solid fa-arrow-right"></i></a>
@@ -467,10 +491,10 @@
                 </div>
                 <div>
                     <p class="about-text">
-                        I'm Sazzad Hossen — an EEE graduate with a 3.92 CGPA from United International University. I specialize in VLSI, structural hardware optimization, and front-end communication layout nodes, translating complex technical problems into clean, high-performance physical circuitry configurations.
+                        I'm Sazzad Hossen — an EEE graduate from United International University with a 3.92 CGPA. I have a solid foundation in electronics, analog circuits, and basic VLSI layout, with a strong enthusiasm for continuous learning and practical hardware problem solving.
                     </p>
                     <p class="about-text" style="font-size: 0.95rem; color: var(--text-muted);">
-                        Currently working as an Analog IC Design Intern at Silicon Array, performing transistor-level schematic design, custom physical layout, and DRC/LVS physical verification.
+                        Currently working as an Analog IC Design Intern at Silicon Array, learning transistor-level schematic design, physical layout, and DRC/LVS verification fundamentals.
                     </p>
                     <div class="stats-row">
                         <div class="stat-box">
@@ -946,15 +970,14 @@
 
             <div class="form-container">
                 <form action="https://formspree.io/f/mnnqgqwp" method="POST">
+                    <input type="hidden" name="_to" value="sazzadhossen299@gmail.com">
+                    
                     <div class="form-row-side">
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" name="name" placeholder="Sazzad Hossen" required>
                         </div>
                         <div class="form-group">
-                            <label type="hidden">
-                                <input type="hidden" name="_to" value="sazzadhossen299@gmail.com">
-                            </label>
                             <label>Email</label>
                             <input type="email" name="_replyto" placeholder="sazzadhossen299@gmail.com" required>
                         </div>
