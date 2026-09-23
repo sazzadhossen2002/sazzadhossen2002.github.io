@@ -183,7 +183,6 @@
         .stat-box h4 { font-size: 2rem; font-weight: 800; color: var(--purple-accent); line-height: 1; }
         .stat-box p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
 
-        /* --- RESEARCH INTERESTS GRID SYSTEM --- */
         .research-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -205,6 +204,58 @@
         }
         .research-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
         .research-item p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+        /* --- CONFERENCE SHOWCASE CARD --- */
+        .pub-showcase-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-bottom: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        @media (min-width: 768px) {
+            .pub-showcase-card {
+                grid-template-columns: 320px 1fr;
+            }
+        }
+        .pub-showcase-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        }
+        .pub-photo-box {
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            background: #0f172a;
+        }
+        .pub-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .pub-content-box {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .pub-badge {
+            display: inline-block;
+            background: #ede9fe;
+            color: var(--purple-accent);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
 
         .cv-section-title {
             font-size: 1.1rem;
@@ -372,6 +423,7 @@
 </head>
 <body>
 
+    <!-- 01 / HERO HOME -->
     <section id="hero">
         <div class="container">
             <div class="section-num">01 / Welcome</div>
@@ -389,6 +441,7 @@
         </div>
     </section>
 
+    <!-- 02 / ABOUT PROFILE -->
     <section id="about">
         <div class="section-nav-bar">
             <div class="container">
@@ -416,7 +469,7 @@
                         I'm Sazzad Hossen — an EEE graduate with a 3.92 CGPA from United International University. I specialize in VLSI, structural hardware optimization, and front-end communication layout nodes, translating complex technical problems into clean, high-performance physical circuitry configurations.
                     </p>
                     <p class="about-text" style="font-size: 0.95rem; color: var(--text-muted);">
-                        Currently serving as a university Teaching Assistant, coordinating class lectures, managing laboratory hardware configurations, and assisting departmental accreditation pipelines.
+                        Currently working as an Analog IC Design Intern at Silicon Array, performing transistor-level schematic design, custom physical layout, and DRC/LVS physical verification[cite: 15, 17].
                     </p>
                     <div class="stats-row">
                         <div class="stat-box">
@@ -435,65 +488,78 @@
                 </div>
             </div>
 
+            <!-- RESEARCH INTERESTS -->
             <div class="cv-section-title"><i class="fa-solid fa-atom" style="color: var(--purple-accent); margin-right: 8px;"></i> Research Interests</div>
             <div class="research-grid">
                 <div class="research-item">
                     <h4>Analog & Mixed-Signal IC</h4>
-                    <p>Design, physical layout deployment, and optimization of low-power operational amplifiers and analog sub-circuits.</p>
+                    <p>Design, physical layout deployment, and optimization of low-power operational amplifiers and analog sub-circuits[cite: 15].</p>
                 </div>
                 <div class="research-item">
                     <h4>RF Transceiver Systems</h4>
-                    <p>High-frequency communication hardware layouts, receiver chain blocks (LNA, Mixers), and parasitic extraction analysis.</p>
+                    <p>High-frequency communication hardware layouts, receiver chain blocks (LNA, Mixers), and parasitic extraction analysis[cite: 15].</p>
                 </div>
                 <div class="research-item">
                     <h4>Digital VLSI Architectures</h4>
-                    <p>RTL hardware verification modeling, high-speed computational ALU optimization tracks, and Verilog compilation processing.</p>
+                    <p>RTL hardware verification modeling, high-speed computational ALU optimization tracks, and Verilog compilation processing[cite: 15].</p>
                 </div>
             </div>
 
-            <div class="cv-section-title"><i class="fa-solid fa-graduation-cap" style="color: var(--purple-accent); margin-right: 8px;"></i> Education</div>
+            <!-- PUBLICATIONS & PRESENTATIONS -->
+            <div class="cv-section-title"><i class="fa-solid fa-book-bookmark" style="color: var(--purple-accent); margin-right: 8px;"></i> Publications & Presentations</div>
             
-            <div class="timeline-block">
-                <div class="timeline-header">
-                    <div class="timeline-title">B.Sc. in Electrical & Electronic Engineering</div>
-                    <div class="timeline-date">Feb 2022 — Feb 2026</div>
+            <div class="pub-showcase-card">
+                <div class="pub-photo-box">
+                    <img src="marscon2026.jpg" alt="Sazzad Hossen presenting at IEEE MARSCON 2026">
                 </div>
-                <div class="timeline-institution">United International University (UIU)</div>
-                <div class="timeline-meta">Major: Electronics, Minor: Communication | CGPA: 3.92 / 4.00</div>
-            </div>
-
-            <div id="expandedEducation" class="hidden-history">
-                <div class="timeline-block">
-                    <div class="timeline-header">
-                        <div class="timeline-title">Higher Secondary Certificate (HSC)</div>
-                        <div class="timeline-date">Passing Year: 2020</div>
+                <div class="pub-content-box">
+                    <div>
+                        <span class="pub-badge"><i class="fa-solid fa-microphone"></i> IEEE Conference Presentation</span>
+                        <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px;">
+                            Design and Performance Analysis of a 2.45 GHz Low-Power RF Receiver Using 45nm CMOS Technology in Cadence Virtuoso[cite: 15, 17]
+                        </h3>
+                        <p style="font-size: 0.88rem; color: var(--purple-accent); font-weight: 600; margin-bottom: 6px;">
+                            IEEE MARSCON 2026 — Ahsanullah University of Science and Technology, Dhaka[cite: 15, 17]
+                        </p>
+                        <p style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 8px;">
+                            <strong>Authors:</strong> Sazzad Hossen, Suvom Karmakar, Tahman Hossain, Azad Hossain Saykat, Dr. Raqibul Mostafa, Dr. Md. Hasanuzzaman[cite: 15, 17]. <em>(To appear in IEEE Xplore)</em>[cite: 15].
+                        </p>
                     </div>
-                    <div class="timeline-institution">Government Science College</div>
-                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
-                </div>
-
-                <div class="timeline-block">
-                    <div class="timeline-header">
-                        <div class="timeline-title">Secondary School Certificate (SSC)</div>
-                        <div class="timeline-date">Passing Year: 2018</div>
+                    <div style="border-top: 1px solid #f1f5f9; padding-top: 12px; margin-top: 8px;">
+                        <a href="conference_slides.pdf" target="_blank" style="color: var(--purple-accent); text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                            <i class="fa-regular fa-file-powerpoint"></i> View Presentation Slides
+                        </a>
                     </div>
-                    <div class="timeline-institution">Shiruail High School</div>
-                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00</div>
                 </div>
             </div>
 
+            <!-- WORK EXPERIENCE -->
             <div class="cv-section-title"><i class="fa-solid fa-briefcase" style="color: var(--purple-accent); margin-right: 8px;"></i> Work Experience</div>
 
+            <!-- 1. Silicon Array (Current) -->
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="timeline-title">Analog IC Design Intern</div>
+                    <div class="timeline-date">Jul 2026 — Present</div>
+                </div>
+                <div class="timeline-institution">Silicon Array — Dhaka, Bangladesh[cite: 15, 17]</div>
+                <ul class="timeline-bullets">
+                    <li>Design and optimize transistor-level analog IC schematics and run circuit simulations[cite: 15].</li>
+                    <li>Implement custom physical layouts with a focus on floorplanning, matching, and symmetry[cite: 15].</li>
+                    <li>Execute DRC and LVS checks to verify layout-to-schematic accuracy[cite: 15].</li>
+                </ul>
+            </div>
+
+            <!-- 2. Teaching Assistant -->
             <div class="timeline-block">
                 <div class="timeline-header">
                     <div class="timeline-title">Teaching Assistant</div>
-                    <div class="timeline-date">Mar 2026 — Present</div>
+                    <div class="timeline-date">Mar 2026 — Jul 2026</div>
                 </div>
-                <div class="timeline-institution">United International University (Dept. of EEE)</div>
+                <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh[cite: 15]</div>
                 <ul class="timeline-bullets">
-                    <li>Conducted laboratory demonstrations, led interactive structural tutorials, and provided critical student counseling blocks.</li>
-                    <li>Assisted senior departmental faculty with routine course management pipelines and comprehensive examination invigilation duties.</li>
-                    <li>Supported BAETE institutional accreditation tasks and coordinated official departmental engineering seminars.</li>
+                    <li>Conducted lab demonstrations, led tutorials, and provided student counseling[cite: 15].</li>
+                    <li>Assisted faculty with course management and exam invigilation[cite: 15].</li>
                 </ul>
             </div>
 
@@ -501,12 +567,12 @@
                 <div class="timeline-block">
                     <div class="timeline-header">
                         <div class="timeline-title">Undergraduate Assistant</div>
-                        <div class="timeline-date">Mar 2025 — Jul 2025</div>
+                        <div class="timeline-date">Mar 2025 — Mar 2026</div>
                     </div>
-                    <div class="timeline-institution">United International University (Dept. of EEE)</div>
+                    <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh[cite: 15]</div>
                     <ul class="timeline-bullets">
-                        <li>Assisted primary course faculty during active lab layout classes and conducted extra operational tutorial sessions for complex coursework requirements.</li>
-                        <li>Provided student academic counseling tracks and structurally supported standard BAETE program accreditation parameters.</li>
+                        <li>Assisted faculty during lab classes and conducted extra tutorial sessions for difficult coursework[cite: 15].</li>
+                        <li>Provided student academic counseling and supported BAETE program accreditation activities[cite: 15].</li>
                     </ul>
                 </div>
 
@@ -515,11 +581,43 @@
                         <div class="timeline-title">Undergraduate Grader</div>
                         <div class="timeline-date">2022 — 2024</div>
                     </div>
-                    <div class="timeline-institution">United International University (Dept. of EEE)</div>
+                    <div class="timeline-institution">United International University (Dept. of EEE) — Dhaka, Bangladesh[cite: 15]</div>
                     <ul class="timeline-bullets">
-                        <li>Evaluated technical layout assignments and structural laboratory reports for multiple specialized engineering courses.</li>
-                        <li>Maintained exact verification grading records and statistical student performance analysis layouts using advanced Microsoft Excel configurations.</li>
+                        <li>Evaluated assignments and lab reports for multiple EEE courses[cite: 15].</li>
+                        <li>Maintained grading records and performance analysis using Excel[cite: 15].</li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- EDUCATION -->
+            <div class="cv-section-title"><i class="fa-solid fa-graduation-cap" style="color: var(--purple-accent); margin-right: 8px;"></i> Education</div>
+            
+            <div class="timeline-block">
+                <div class="timeline-header">
+                    <div class="timeline-title">B.Sc. in Electrical & Electronic Engineering</div>
+                    <div class="timeline-date">Feb 2022 — Feb 2026</div>
+                </div>
+                <div class="timeline-institution">United International University (UIU)[cite: 15]</div>
+                <div class="timeline-meta">Major: Electronics, Minor: Communication | CGPA: 3.92 / 4.00[cite: 15]</div>
+            </div>
+
+            <div id="expandedEducation" class="hidden-history">
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Higher Secondary Certificate (HSC)</div>
+                        <div class="timeline-date">Passing Year: 2020</div>
+                    </div>
+                    <div class="timeline-institution">Government Science College[cite: 15]</div>
+                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00[cite: 15]</div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Secondary School Certificate (SSC)</div>
+                        <div class="timeline-date">Passing Year: 2018</div>
+                    </div>
+                    <div class="timeline-institution">Shiruail High School[cite: 15]</div>
+                    <div class="timeline-meta">Group: Science | GPA: 5.00 / 5.00[cite: 15]</div>
                 </div>
             </div>
 
@@ -532,6 +630,7 @@
         </div>
     </section>
 
+    <!-- 03 / SKILLS STACK -->
     <section id="skills">
         <div class="container">
             <div class="section-num">03 / Skills — Stack</div>
@@ -561,6 +660,7 @@
         </div>
     </section>
 
+    <!-- 04 / SELECTED WORK -->
     <section id="projects">
         <div class="container">
             <div class="section-num">04 / Portfolio</div>
@@ -571,7 +671,7 @@
                     <div class="card-banner">Capstone Highlight</div>
                     <div class="card-body">
                         <h3>2.45 GHz CMOS RF Receiver Front-End</h3>
-                        <p>Designed and simulated a complete receiver front-end chain by seamlessly integrating BPF, LNA, Mixer, and LPF blocks to optimize signal processing and minimize system noise floor parameters. Realized an overall conversion gain of 50 dB with an intermediate frequency of 10-20 MHz.</p>
+                        <p>Designed and simulated a complete receiver front-end chain by seamlessly integrating BPF, LNA, Mixer, and LPF blocks to optimize signal processing and minimize system noise floor parameters[cite: 15]. Realized an overall conversion gain of 50 dB with an intermediate frequency of 10-20 MHz[cite: 15].</p>
                         <div class="card-tags" style="margin-bottom: 12px;">
                             <span>Cadence Virtuoso</span><span>45nm CMOS</span><span>RF Layout</span><span>Spectre</span>
                         </div>
@@ -586,7 +686,7 @@
                     <div class="card-banner">VLSI Engineering</div>
                     <div class="card-body">
                         <h3>8-bit Carry Save Adder Schematic & Layout</h3>
-                        <p>Completed full schematic simulation, circuit design optimization, functional timing verification, and layout implementation ensuring DRC & LVS clean processing constraints.</p>
+                        <p>Completed full schematic simulation, circuit design optimization, functional timing verification, and layout implementation ensuring DRC & LVS clean processing constraints[cite: 15].</p>
                         <div class="card-tags" style="margin-bottom: 12px;">
                             <span>IC Design</span><span>DRC / LVS Clean</span><span>Cadence</span>
                         </div>
@@ -597,7 +697,7 @@
                     <div class="card-banner">Digital Architectures</div>
                     <div class="card-body">
                         <h3>32-bit ARM ALU Design</h3>
-                        <p>Developed behavioral RTL code implementing clear processing arithmetic, logic, and shifting operations along with custom NZCV condition flag logic configurations.</p>
+                        <p>Developed behavioral RTL code implementing clear processing arithmetic, logic, and shifting operations along with custom NZCV condition flag logic configurations[cite: 15].</p>
                         <div class="card-tags" style="margin-bottom: 12px;">
                             <span>Verilog</span><span>RTL Coding</span><span>ARM Architecture</span>
                         </div>
@@ -610,8 +710,17 @@
                     <div class="card-banner">Analog Integrated Systems</div>
                     <div class="card-body">
                         <h3>2-Stage OTA in 45nm CMOS</h3>
-                        <p>Designed and simulated a custom high-gain, wide-bandwidth Operational Transconductance Amplifier (OTA) utilizing advanced CMOS technology nodes.</p>
+                        <p>Designed and simulated a custom high-gain, wide-bandwidth Operational Transconductance Amplifier (OTA) utilizing advanced CMOS technology nodes[cite: 15].</p>
                         <div class="card-tags"><span>OTA</span><span>CMOS 45nm</span><span>Analog Layout</span></div>
+                    </div>
+                </div>
+
+                <div class="display-card">
+                    <div class="card-banner">Analog Integrated Systems</div>
+                    <div class="card-body">
+                        <h3>Fully Differential Folded-Cascode OTA</h3>
+                        <p>Designed in 45nm CMOS using gm/ID methodology and thoroughly verified in Cadence Virtuoso[cite: 15].</p>
+                        <div class="card-tags"><span>gm/ID</span><span>Folded Cascode</span><span>Cadence</span></div>
                     </div>
                 </div>
 
@@ -619,7 +728,7 @@
                     <div class="card-banner">Embedded Systems</div>
                     <div class="card-body">
                         <h3>Smart Glove for Sign Language Translation</h3>
-                        <p>Built a sensor-based embedded system hardware configuration capable of translating physical hand gesture coordinates into real-time text and speech readouts.</p>
+                        <p>Built a sensor-based embedded system hardware configuration capable of translating physical hand gesture coordinates into real-time text and speech readouts[cite: 15].</p>
                         <div class="card-tags"><span>Sensors</span><span>STM32</span><span>Arduino</span></div>
                     </div>
                 </div>
@@ -628,7 +737,7 @@
                     <div class="card-banner">Power Distribution</div>
                     <div class="card-body">
                         <h3>2 kW Power System Grid Modeling</h3>
-                        <p>Conducted formal load flow analysis parameters and optimized a functional 2 kW power system model structured for an established IEEE-14 bus network.</p>
+                        <p>Conducted formal load flow analysis parameters and optimized a functional 2 kW power system model structured for an established IEEE-14 bus network[cite: 15].</p>
                         <div class="card-tags"><span>ETAP</span><span>IEEE-14 Bus</span><span>Grid Analysis</span></div>
                     </div>
                 </div>
@@ -637,7 +746,7 @@
                     <div class="card-banner">Signal Processing</div>
                     <div class="card-body">
                         <h3>DSB-SC Transmission & SDR Analysis</h3>
-                        <p>Measured indoor path loss variables using a 915 MHz DSB-SC signal format combined with functional software-defined radio power analysis layouts.</p>
+                        <p>Measured indoor path loss variables using a 915 MHz DSB-SC signal format combined with functional software-defined radio power analysis layouts[cite: 15].</p>
                         <div class="card-tags"><span>DSB-SC</span><span>SDR</span><span>915 MHz</span></div>
                     </div>
                 </div>
@@ -655,7 +764,7 @@
                     <div class="card-banner">Computer Vision</div>
                     <div class="card-body">
                         <h3>Automatic License Plate Recognition</h3>
-                        <p>Developed an automatic image processing framework and localized segmentation algorithm optimized for vehicle detection routines.</p>
+                        <p>Developed an automatic image processing framework and localized segmentation algorithm optimized for vehicle detection routines[cite: 15].</p>
                         <div class="card-tags"><span>MATLAB</span><span>Image Processing</span><span>Computer Vision</span></div>
                     </div>
                 </div>
@@ -664,17 +773,8 @@
                     <div class="card-banner">Hardware Engineering</div>
                     <div class="card-body">
                         <h3>BPSK Modulation & Demodulation</h3>
-                        <p>Simulated and successfully engineered custom Binary Phase Shift Keying modulation hardware blocks for data transceivers.</p>
+                        <p>Simulated and successfully engineered custom Binary Phase Shift Keying modulation hardware blocks for data transceivers[cite: 15].</p>
                         <div class="card-tags"><span>BPSK</span><span>Hardware Deployment</span><span>Communication</span></div>
-                    </div>
-                </div>
-
-                <div class="display-card">
-                    <div class="card-banner">Sustainable Environments</div>
-                    <div class="card-body">
-                        <h3>EcoBridge Smart Waste Management</h3>
-                        <p>Co-developed a smart monitoring network configuration for automated municipal waste segregation and environmental optimization metrics.</p>
-                        <div class="card-tags"><span>Automation</span><span>Resource Recovery</span><span>Smart Systems</span></div>
                     </div>
                 </div>
             </div>
@@ -685,6 +785,7 @@
         </div>
     </section>
 
+    <!-- 05 / COMPREHENSIVE RECOGNITION GALLERY -->
     <section id="recognition">
         <div class="container">
             <div class="section-num">05 / Recognition</div>
@@ -694,21 +795,21 @@
                 <div class="gallery-card">
                     <img src="vlsi2025.jpg" alt="VLSI Design Competition Champion">
                     <div class="gallery-caption">
-                        <strong>Champion</strong> — VLSI Design Competition, UIU EEE Day 2025
+                        <strong>Champion</strong> — VLSI Design Competition, UIU EEE Day 2025[cite: 15]
                     </div>
                 </div>
 
                 <div class="gallery-card">
                     <img src="vlsi2.jpg" alt="Junior Intra-University VLSI Design Competition Champion">
                     <div class="gallery-caption">
-                        <strong>Champion</strong> — Junior Intra-University VLSI Design Competition
+                        <strong>Champion</strong> — Junior Intra-University VLSI Design Competition[cite: 15]
                     </div>
                 </div>
 
                 <div class="gallery-card">
                     <img src="matlab.jpg" alt="MATLAB Simulate and Innovate Champion">
                     <div class="gallery-caption">
-                        <strong>Champion</strong> — MATLAB: Simulate & Innovate Competition
+                        <strong>Champion</strong> — MATLAB: Simulate & Innovate Competition[cite: 15]
                     </div>
                 </div>
             </div>
@@ -717,14 +818,14 @@
                 <div class="gallery-card">
                     <img src="mist.robulattion.jpg" alt="MIST Robolution VLSI Runner-Up">
                     <div class="gallery-caption">
-                        <strong>1st Runner-Up</strong> — National VLSI Design Competition, MIST Robolution
+                        <strong>1st Runner-Up</strong> — National VLSI Design Competition, MIST Robolution[cite: 15]
                     </div>
                 </div>
 
                 <div class="gallery-card">
                     <img src="projectshow.jpg" alt="EEE Project Show Runner-Up">
                     <div class="gallery-caption">
-                        <strong>Runner-Up</strong> — EEE Project Show (Senior Category)
+                        <strong>Runner-Up</strong> — EEE Project Show (Senior Category)[cite: 15]
                     </div>
                 </div>
             </div>
@@ -733,6 +834,7 @@
                 <button class="btn-outline" id="toggleAwardsBtn" onclick="toggleAwards()" style="cursor: pointer;">Show More</button>
             </div>
 
+            <!-- CERTIFICATES & TRAINING -->
             <div class="cv-section-title" style="margin-top: 50px;"><i class="fa-solid fa-certificate" style="color: var(--purple-accent); margin-right: 8px;"></i> Certificates & Training</div>
             
             <div class="cert-grid">
@@ -740,7 +842,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-user-tie"></i></div>
                     <div class="cert-info">
                         <h4>Professional Skills Development</h4>
-                        <p>United International University | Dec 2025</p>
+                        <p>United International University | Dec 2025[cite: 15]</p>
                     </div>
                 </div>
 
@@ -756,7 +858,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
                     <div class="cert-info">
                         <h4>Matlab-Simulate & Innovate</h4>
-                        <p>United International University | Dec 2024</p>
+                        <p>United International University | Dec 2024[cite: 15]</p>
                     </div>
                 </div>
 
@@ -782,7 +884,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-comments"></i></div>
                     <div class="cert-info">
                         <h4>Presentation & Public Speaking</h4>
-                        <p>10 Minute School | Jun 2023</p>
+                        <p>10 Minute School | Jun 2023[cite: 15]</p>
                     </div>
                 </div>
 
@@ -790,7 +892,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-network-wired"></i></div>
                     <div class="cert-info">
                         <h4>DevOps for Engineers</h4>
-                        <p>Cisco | Feb 2024</p>
+                        <p>Cisco | Feb 2024[cite: 15]</p>
                     </div>
                 </div>
 
@@ -798,7 +900,7 @@
                     <div class="cert-icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="cert-info">
                         <h4>Introduction to Networks</h4>
-                        <p>Cisco | Apr 2023</p>
+                        <p>Cisco | Apr 2023[cite: 15]</p>
                     </div>
                 </div>
 
@@ -818,6 +920,7 @@
         </div>
     </section>
 
+    <!-- 06 / CONTACT FORM -->
     <section id="contact">
         <div class="container">
             <div class="section-num">06 / Contact</div>
